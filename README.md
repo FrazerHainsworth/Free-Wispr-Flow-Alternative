@@ -6,6 +6,8 @@ This is a public build of [whisper-local](https://github.com/drajb/whisper-local
 
 Plain setup steps are in [INSTRUCTIONS.txt](INSTRUCTIONS.txt).
 
+Repository: https://github.com/FrazerHainsworth/Free-Wispr-Flow-Alternative
+
 ## What stays on your machine
 
 - Your microphone audio is transcribed locally with Whisper. It is not uploaded for transcription.
