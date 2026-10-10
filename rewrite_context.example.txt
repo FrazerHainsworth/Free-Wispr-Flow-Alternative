@@ -1,0 +1,14 @@
+# Copy of the optional rewrite style guide.
+# The real file lives on your PC and is not uploaded:
+#   Windows: %APPDATA%\whisperkey\rewrite_context.txt
+#   macOS:   ~/.whisperkey/rewrite_context.txt
+#
+# Create it from Settings, AI tab, "Edit full style guide".
+# Lines that start with # are ignored.
+#
+# Example (delete the # on the lines you want to keep):
+#
+# Write in plain English.
+# Short paragraphs.
+# Keep my meaning. Do not add facts.
+# No emoji.

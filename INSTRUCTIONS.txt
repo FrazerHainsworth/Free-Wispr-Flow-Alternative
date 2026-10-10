@@ -1,0 +1,128 @@
+FREE WISPR FLOW ALTERNATIVE
+Setup, models, API keys, and correction rules
+
+
+WHAT THIS IS
+Hold a key, speak, and the text is typed where your cursor is.
+Speech recognition runs on your computer with Whisper.
+Rewriting a sentence with a cloud model is optional. You bring your own API key.
+
+This folder is the public version. It does not include a personal API key
+or a personal writing guide. Your own copy of those stays on your PC after
+you create them.
+
+
+WHAT YOU NEED
+- Windows 10 or newer, or macOS
+- Python 3.11 or newer
+  Check with:  py -3 --version
+  Download from https://www.python.org/downloads/ if that command fails.
+  During install, turn on "Add python.exe to PATH".
+
+
+INSTALL
+1. Open PowerShell in this folder.
+2. Run:
+
+     py -3 -m pip install -e .
+
+   The first install downloads PyTorch-related libraries and can take a while.
+3. Start the app:
+
+     py -3 -m whisper_key.main
+
+4. A tray icon appears. The Base speech model downloads the first time you dictate.
+
+
+CHOOSE THE TRANSCRIPTION MODEL
+1. Right-click the tray icon.
+2. Click Settings...
+3. Stay on the AI tab.
+4. Set Transcription model.
+
+   tiny     smallest and fastest, more mistakes
+   base     default, good for most people
+   small    clearer, slower on a CPU
+   medium   better again, happier with a GPU
+   large    most accurate, wants a GPU
+
+5. Click Save.
+6. Restart the app from the tray so the new model loads.
+
+The model file is downloaded once and then reused offline.
+Your voice for transcription is not sent to an API.
+
+
+ADD AN API KEY (ONLY IF YOU WANT REWRITES)
+You can skip this. Dictation works with the key left blank.
+
+If you want the app to clean up wording through OpenAI:
+
+1. Create a key at https://platform.openai.com/api-keys
+2. Settings, AI tab.
+3. Paste it into OpenAI API key. Show reveals it. Hide covers it again.
+4. Pick a Rewrite model. gpt-4.1-mini is the inexpensive default.
+5. Optional short style note, for example:
+     plain English, short paragraphs, no emoji
+6. Optional: click Edit full style guide.
+   That creates a private file on your PC:
+     %APPDATA%\whisperkey\rewrite_context.txt
+   Lines that start with # are ignored. Write how you want rewrites to sound.
+   That file is not part of this project and should not be uploaded.
+7. Save.
+
+The key is stored only in:
+  %APPDATA%\whisperkey\user_settings.yaml
+Do not email that file, and do not put the key in a GitHub issue.
+
+LOCAL REWRITE WITHOUT A KEY
+Install Ollama from https://ollama.com
+In a terminal run:  ollama pull llama3.2
+On the AI tab, turn on Use Ollama for local cleanup.
+Set the Ollama model to the name you pulled.
+Save and restart.
+
+
+CORRECTION RULES
+After a dictation is pasted, the app watches the text field for a few seconds.
+If you change a word, it can save that change as a rule.
+The next time it hears the old word, it writes the new one.
+
+A card pops up at the top right when a rule is saved.
+It names the words. If the rule is wrong, remove it.
+
+Open the list:
+  tray, Learned corrections...
+or:
+  py -3 -m whisper_key.main --corrections
+
+On that page you can search, edit, or delete rules.
+Rules run from the top of the list to the bottom.
+If one rule's result is another rule's input, the later rule wins.
+Example: a rule "send -> save" will paste "save" whenever you say send.
+Delete that rule if you did not mean to teach it.
+
+Turn the feature off entirely:
+  Settings, Post-process, uncheck "Remember words you fix by hand".
+
+
+EVERYDAY USE
+- The record hotkey is listed in the tray under Hotkey cheat sheet.
+- Speak into the app you want the text to land in.
+- Settings... is where the model, key, and hotkeys live.
+- Transcript history... keeps a local journal of dictations.
+- Hotkey and model changes need a restart.
+- Other setting changes apply the next time you dictate.
+
+
+PRIVACY
+- Do not commit user_settings.yaml.
+- Do not commit rewrite_context.txt.
+- This git repository is public. Anything you push from a changed copy
+  can be read by anyone. Check for keys before you commit.
+
+
+CREDITS
+Pin Wang, whisper-key-local.
+Rohit Burani, whisper-local.
+License: MIT. See LICENSE.

@@ -1,0 +1,151 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+# Exception: Keep our custom build spec files
+!pyinstaller-build/*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Application logs
+*.log
+
+# User testing files
+user-testing/
+
+# Build configuration (user-specific paths)
+pyinstaller-build/build-config*.json
+!pyinstaller-build/build-config.example.json
+pyapp-build/build-config.json
+!pyapp-build/build-config.example.json
+
+# Temporary working files
+.temp/
+
+# Local Claude instructions
+CLAUDE.local.md
+.claude/local-memory/
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+.claude/worktrees/
+
+# Personal launcher scripts (user-local, not part of the repo)
+start_whisper_key.vbs
+start_whisper_local.vbs
+
+# Personal AI-assistant scaffolding extracted into this working copy. Not part
+# of the product; ignored so a `git add -A` can never publish it to the repo.
+.ai/
+.artifacts/
+brain/
+STARTER-PROMPT.md
+VERIFY.md
+
+# Private to each person. Never commit a key or a personal style guide.
+**/user_settings.yaml
+rewrite_context.txt
+otc_master_context.txt
+otc context.txt
